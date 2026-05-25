@@ -6,162 +6,144 @@
 <title>纳指100动态简报 · 2026-05-25</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#1f2937;padding:16px;max-width:480px;margin:0 auto}
-.header{text-align:center;margin-bottom:20px}
-.header h1{font-size:20px;font-weight:700;color:#111827}
-.header .sub{font-size:13px;color:#6b7280;margin-top:4px}
-.header .badge{display:inline-block;background:#f97316;color:#fff;font-size:11px;padding:2px 8px;border-radius:10px;margin-top:6px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
-.grid1{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:14px}
-.card{background:#fff;border-radius:12px;padding:14px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.card .label{font-size:12px;color:#6b7280;margin-bottom:4px}
-.card .value{font-size:24px;font-weight:700}
-.card .change{font-size:13px;margin-top:2px}
-.card .note{font-size:11px;color:#6b7280;margin-top:4px;line-height:1.4}
-.up{color:#ef4444}
-.down{color:#22c55e}
-.neutral{color:#6b7280}
-.warn{color:#f97316}
-.section-title{font-size:15px;font-weight:700;margin:18px 0 10px;color:#111827;padding-left:8px;border-left:3px solid #ef4444}
-.section-title.blue{border-left-color:#3b82f6}
-.news-item{background:#fff;border-radius:12px;padding:14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.news-item .tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:4px;margin-right:6px;color:#fff}
-.tag-red{background:#ef4444}
-.tag-green{background:#22c55e}
-.tag-orange{background:#f97316}
-.tag-blue{background:#3b82f6}
-.news-item h3{font-size:14px;font-weight:700;margin:8px 0 4px}
-.news-item p{font-size:13px;color:#4b5563;line-height:1.6}
-.alert-bar{background:#fff3cd;border-left:4px solid #f97316;border-radius:8px;padding:12px 14px;margin-bottom:10px;font-size:13px;line-height:1.6;color:#92400e}
-.alert-bar.critical{background:#fef2f2;border-left-color:#ef4444;color:#991b1b}
-.alert-bar .alert-time{font-weight:700;font-size:12px;margin-bottom:4px}
-.gauge{text-align:center;padding:16px}
-.gauge .meter{font-size:32px;font-weight:800;margin:8px 0}
-.conclusion{background:#fff;border-radius:16px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,.08);border-top:4px solid #ef4444}
-.conclusion.nowait{border-top-color:#3b82f6;background:#eff6ff}
-.conclusion .verdict{font-size:22px;font-weight:800;text-align:center;margin-bottom:12px}
-.conclusion .verdict.red{color:#ef4444}
-.conclusion .verdict.blue{color:#3b82f6}
-.conclusion .reasons{font-size:13px;color:#4b5563;line-height:1.8}
-.conclusion .reasons li{margin-bottom:6px;padding-left:4px}
-.conclusion .reasons li::marker{color:#3b82f6;font-weight:700}
-.divider{height:1px;background:#e5e7eb;margin:16px 0}
-.footer{text-align:center;font-size:11px;color:#9ca3af;margin:20px 0 10px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f3f4f6;color:#1f2937;padding:16px;line-height:1.6}
+.container{max-width:480px;margin:0 auto}
+.header{background:linear-gradient(135deg,#1e293b,#334155);color:#fff;padding:20px;border-radius:16px;margin-bottom:16px}
+.header h1{font-size:20px;font-weight:700;margin-bottom:4px}
+.header .sub{font-size:13px;color:#94a3b8}
+.header .holiday-badge{display:inline-block;background:#f97316;color:#fff;font-size:11px;padding:2px 8px;border-radius:10px;margin-left:8px;vertical-align:middle}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.card .label{font-size:12px;color:#6b7280;margin-bottom:6px}
+.card .value{font-size:22px;font-weight:700;margin-bottom:4px}
+.card .change{font-size:13px;font-weight:600}
+.up{color:#ef4444}.down{color:#22c55e}.neutral{color:#6b7280}.warn{color:#f97316}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:8px;margin-top:6px;font-weight:600}
+.tag-up{background:#fef2f2;color:#ef4444}
+.tag-down{background:#f0fdf4;color:#22c55e}
+.tag-warn{background:#fff7ed;color:#f97316}
+.tag-neutral{background:#f3f4f6;color:#6b7280}
+.section{background:#fff;border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.section h2{font-size:15px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.news-item{margin-bottom:10px;padding-left:12px;border-left:3px solid #e5e7eb}
+.news-item:last-child{margin-bottom:0}
+.news-item .title{font-size:14px;font-weight:600;color:#1f2937;margin-bottom:3px}
+.news-item .desc{font-size:13px;color:#6b7280}
+.alert-bar{background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:10px;padding:12px 14px;margin-bottom:12px;font-size:13px;font-weight:600;color:#92400e;display:flex;align-items:flex-start;gap:8px}
+.alert-bar.urgent{background:linear-gradient(135deg,#fee2e2,#fecaca);color:#991b1b}
+.gauge{display:flex;align-items:center;gap:12px;padding:12px 0}
+.gauge-bar{flex:1;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden}
+.gauge-fill{height:100%;border-radius:4px;transition:width .5s}
+.gauge-label{font-size:13px;font-weight:600;white-space:nowrap}
+.conclusion{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:2px solid #ef4444;border-radius:14px;padding:20px;margin-bottom:14px}
+.conclusion h2{font-size:17px;font-weight:700;color:#991b1b;margin-bottom:12px}
+.reason-list{list-style:none}
+.reason-list li{font-size:14px;padding:6px 0 6px 20px;position:relative;color:#7f1d1d}
+.reason-list li::before{content:'•';position:absolute;left:4px;color:#ef4444;font-weight:700}
+.footer{text-align:center;font-size:11px;color:#9ca3af;padding:12px 0}
+.conclusion.wait{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#3b82f6}
+.conclusion.wait h2{color:#1e40af}
+.conclusion.wait .reason-list li{color:#1e3a5f}
+.conclusion.wait .reason-list li::before{color:#3b82f6}
 </style>
 </head>
 <body>
+<div class="container">
 
 <div class="header">
-  <h1>纳指100动态简报</h1>
-  <div class="sub">2026年5月25日 星期一 · 美股休市（阵亡将士纪念日）</div>
-  <div class="badge">数据日期：5月22日（上周五）</div>
+<h1>纳指100动态简报</h1>
+<div class="sub">2026-05-25 周一 <span class="holiday-badge">美股休市</span></div>
+<div class="sub" style="margin-top:4px">最近交易日：2026-05-23（上周五）</div>
 </div>
 
-<!-- 四格指标卡片 -->
-<div class="grid2">
-  <div class="card">
-    <div class="label">纳指100（NDX）</div>
-    <div class="value up">29,481.64</div>
-    <div class="change up">+0.42% ↑</div>
-    <div class="note">上周五收涨，标普连涨八周创2023年以来最长纪录</div>
-  </div>
-  <div class="card">
-    <div class="label">纳指期货（NQ）</div>
-    <div class="value up">29,511.43</div>
-    <div class="change up">+0.22% ↑</div>
-    <div class="note">盘后小幅走高，情绪偏稳</div>
-  </div>
-  <div class="card">
-    <div class="label">VIX 恐慌指数</div>
-    <div class="value down">16.70</div>
-    <div class="change down">-0.36% ↓</div>
-    <div class="note">处于2月初以来最低，市场情绪平稳</div>
-  </div>
-  <div class="card">
-    <div class="label">VIX期货（VX 6月）</div>
-    <div class="value warn">19.65</div>
-    <div class="change warn">+1.57% ↑</div>
-    <div class="note">⚠️ VIX跌但VX涨，预示近期波动预期分歧加大</div>
-  </div>
+<div class="cards">
+<div class="card">
+<div class="label">纳指100 NDX</div>
+<div class="value">29,481.64</div>
+<div class="change up">+124.37 (+0.42%)</div>
+<span class="tag tag-up">小幅收涨</span>
+</div>
+<div class="card">
+<div class="label">纳指期货 NQ</div>
+<div class="value" style="font-size:18px">盘前交易</div>
+<div class="change up">+1.0%</div>
+<span class="tag tag-up">情绪乐观</span>
+</div>
+<div class="card">
+<div class="label">恐慌指数 VIX</div>
+<div class="value">16.78</div>
+<div class="change neutral">+0.10 (+0.60%)</div>
+<span class="tag tag-neutral">低位运行</span>
+</div>
+<div class="card">
+<div class="label">纳指ETF嘉实 159501</div>
+<div class="value">1.978</div>
+<div class="change warn">溢价 5.19%</div>
+<span class="tag tag-warn">高溢价预警</span>
+</div>
 </div>
 
-<!-- 159501 卡片 -->
-<div class="grid1">
-  <div class="card">
-    <div class="label">纳指ETF嘉实（159501）</div>
-    <div class="value up">2.040 元</div>
-    <div class="change up">较上周五 +3.13% ↑</div>
-    <div class="note" style="color:#f97316;font-weight:600">
-      🚨 溢价率已超5%（5/22 IOPV 1.8804），今日盘中最高触及2.18元，基金公司已发布溢价风险提示公告，可能申请临时停牌
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- 驱动事件 -->
-<div class="section-title">驱动事件</div>
-
+<div class="section">
+<h2>📰 关键事件大白话</h2>
 <div class="news-item">
-  <span class="tag tag-red">新任美联储主席</span>
-  <h3>沃什宣誓就职，释放鹰派信号</h3>
-  <p>5月22日凯文·沃什正式就任美联储主席，明确表示美联储不应再释放降息信号，短时间按兵不动。市场已开始price in年内加息一次。这对科技股估值构成压力——利率越高，未来利润折现回来越不值钱。</p>
+<div class="title">SpaceX星舰V3成功首飞，IPO箭在弦上</div>
+<div class="desc">马斯克的SpaceX在5月23日完成升级版星舰V3首飞并部署模拟卫星，这是IPO前最关键的技术展示。与此同时，美银首席策略师Hartnett发出明确泡沫警告——SpaceX和OpenAI的巨型IPO可能把AI科技股权重推到历史泡沫水平（仅次于19世纪铁路泡沫）。</div>
 </div>
-
 <div class="news-item">
-  <span class="tag tag-green">AI + 芯片双引擎</span>
-  <h3>费城半导体指数再创新高，高通暴涨11%</h3>
-  <p>AI投资热潮不减，芯片股集体爆发。英伟达虽小幅回调，但高通、AMD等全线大涨。中东局势缓和进一步提振风险偏好。AI仍是当前市场最强的结构性主线。</p>
+<div class="title">美联储新主席上任，PCE通胀数据本周来袭</div>
+<div class="desc">凯文·沃什正式就任美联储主席。本周四（5月28日）将公布4月PCE通胀数据，这是美联储最看重的通胀指标。此前CPI和PPI都偏热，市场已经开始计入年内重新加息的可能性，债市收益率持续攀升（10年期4.56%）。</div>
+</div>
 </div>
 
-<div class="divider"></div>
-
-<!-- 未来风险事件 -->
-<div class="section-title blue">未来风险事件预警</div>
-
-<div class="alert-bar critical">
-  <div class="alert-time">🔴 本周四 5月28日 · 不足3个交易日</div>
-  <strong>美国4月PCE通胀数据发布</strong><br>
-  美联储最看重的通胀指标。此前CPI、PPI双双超预期，若PCE继续偏热，市场加息预期将急剧升温，可能引发纳指大幅回调。这是本周最大不确定性来源。
+<div class="section">
+<h2>📅 未来风险事件</h2>
+<div class="alert-bar urgent">
+<span>⚠</span>
+<span><strong>5月28日（周四）</strong>：美国4月PCE物价指数发布。若通胀再超预期，可能引发加息担忧，对科技股估值形成直接冲击。距现在仅3天，是本周最大的不确定性来源。</span>
 </div>
-
 <div class="alert-bar">
-  <div class="alert-time">🟡 本周二至周五 5/26-5/29</div>
-  <strong>多项数据密集出炉</strong><br>
-  周二ADP就业、消费者信心；周四Q1 GDP修正值；同时段欧元区和东京CPI同步发布。叠加季末财报收尾，数据噪音较大。
+<span>📌</span>
+<span><strong>SpaceX / OpenAI IPO进程</strong>：巨型IPO定价窗口临近，承销商护盘动力与泡沫破裂风险并存，需持续关注。</span>
+</div>
 </div>
 
-<div class="divider"></div>
-
-<!-- 趋势预判 -->
-<div class="section-title">趋势仪表盘</div>
-<div class="card gauge">
-  <div class="label">短期倾向</div>
-  <div class="meter" style="color:#f97316">偏谨慎</div>
-  <div class="note">
-    纳指本身趋势不差（AI主线+低VIX），但本周面临PCE重磅数据考验。VX逆势上涨说明聪明钱在买"波动保险"，短期不宜激进。加上159501溢价畸高，此时追入性价比极低。
-  </div>
+<div class="section">
+<h2>🧭 趋势仪表盘</h2>
+<div class="gauge">
+<span class="gauge-label" style="color:#22c55e">恐慌</span>
+<div class="gauge-bar"><div class="gauge-fill" style="width:28%;background:linear-gradient(90deg,#22c55e,#f97316,#ef4444)"></div></div>
+<span class="gauge-label" style="color:#6b7280">中性</span>
+</div>
+<p style="font-size:13px;color:#6b7280;margin-top:6px">
+VIX处于16.78低位，市场恐慌情绪有限。但NQ期货盘前涨1%与VIX微升形成微妙背离——说明资金在乐观中保留一份谨慎。标普500周线八连涨后，短期获利盘压力渐增。综合判断：<strong style="color:#f97316">短期偏谨慎</strong>——趋势未坏，但高溢价+PCE数据双重压制，不宜追高。
+</p>
 </div>
 
-<div class="divider"></div>
+<div class="conclusion wait">
+<h2>💡 操作建议：⛔ 不加仓</h2>
+<ul class="reason-list">
+<li><strong>溢价畸高，硬伤难忽视：</strong>159501在5月22日收盘价1.978元，IOPV仅1.8804元，溢价率高达5.19%，已突破5%警戒线。嘉实基金已发布溢价风险提示公告，明确表示若溢价未回落可申请盘中停牌。此时买入相当于多花5%的钱买同样的东西，成本极不划算。</li>
+<li><strong>PCE数据本周四公布，变数太大：</strong>前两轮CPI和PPI都偏热，市场对PCE预期偏谨慎。万一数据再超预期，加息预期升温将直接打压纳指估值，现在冲进去可能正好撞枪口。</li>
+<li><strong>趋势虽好，等窗口更安全：</strong>纳指整体趋势向上、标普八周连涨、NQ盘前涨1%，基本面不差。但今天美股休市无法验证方向，159501溢价又高，不如等PCE落地后（周五或下周初）再判断——到时候溢价可能也回落了，安全边际更高。</li>
+</ul>
+</div>
 
-<!-- 操作结论 -->
-<div class="conclusion nowait">
-  <div class="verdict blue">⛔ 不加仓</div>
-  <ul class="reasons">
-    <li><strong>溢价警告：</strong>159501溢价率已超5%，5月22日IOPV仅1.8804元，盘中价格一度冲至2.18元，偏离净值超15%。基金公司已发风险提示，盲目买入可能面临溢价回落+净值波动的双重亏损。</li>
-    <li><strong>PCE数据炸弹：</strong>周四（5/28）美国4月PCE即将公布，此前CPI、PPI均超预期，通胀上行风险真实存在。若数据偏热，纳指可能急跌，现在加仓等于在雷区边缘买入。</li>
-    <li><strong>利率环境恶化：</strong>沃什就任后明确放弃降息信号，市场正在为年内加息定价。高利率环境对纳指这类高估值成长股天然不利。</li>
-  </ul>
-  <div class="note" style="margin-top:12px;font-size:12px;color:#6b7280">
-    💡 建议策略：等待周四PCE数据落地后再评估。若数据温和、溢价回落至3%以内，才是更好的加仓窗口。当前最优操作是"持有不动，静观其变"。
-  </div>
+<div style="background:#fff;border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+<h2 style="font-size:15px;font-weight:700;margin-bottom:10px">📊 关键数据速查</h2>
+<table style="width:100%;font-size:13px;border-collapse:collapse">
+<tr style="border-bottom:1px solid #f3f4f6"><td style="padding:8px 4px;color:#6b7280">NDX收盘</td><td style="padding:8px 4px;font-weight:600">29,481.64</td><td style="padding:8px 4px;color:#ef4444">+0.42%</td></tr>
+<tr style="border-bottom:1px solid #f3f4f6"><td style="padding:8px 4px;color:#6b7280">NQ期货（盘前）</td><td style="padding:8px 4px;font-weight:600">--</td><td style="padding:8px 4px;color:#ef4444">+1.0%</td></tr>
+<tr style="border-bottom:1px solid #f3f4f6"><td style="padding:8px 4px;color:#6b7280">VIX（5/22）</td><td style="padding:8px 4px;font-weight:600">16.78</td><td style="padding:8px 4px;color:#22c55e">+0.60%</td></tr>
+<tr style="border-bottom:1px solid #f3f4f6"><td style="padding:8px 4px;color:#6b7280">159501收盘（5/22）</td><td style="padding:8px 4px;font-weight:600">1.978</td><td style="padding:8px 4px;color:#f97316">溢价5.19%</td></tr>
+<tr style="border-bottom:1px solid #f3f4f6"><td style="padding:8px 4px;color:#6b7280">159501净值/IOPV</td><td style="padding:8px 4px;font-weight:600">1.8804</td><td style="padding:8px 4px;color:#6b7280">5/22</td></tr>
+<tr><td style="padding:8px 4px;color:#6b7280">10年期美债收益率</td><td style="padding:8px 4px;font-weight:600">4.56%</td><td style="padding:8px 4px;color:#6b7280">连续回落</td></tr>
+</table>
 </div>
 
 <div class="footer">
-  数据来源：腾讯自选股、新浪财经、汇通财经 · 仅供参考，不构成投资建议<br>
-  自动更新于 2026-05-25
+纳指100动态简报 · 2026-05-25 · 数据仅供参考，不构成投资建议
 </div>
 
+</div>
 </body>
 </html>
