@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>纳指100动态简报 · 2026年5月25日（阵亡将士纪念日休市）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f3f4f6;
+    color: #1f2937;
+    padding: 16px 12px 32px;
+    line-height: 1.6;
+  }
+  .container { max-width: 480px; margin: 0 auto; }
+
+  .header {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+  .header h1 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .header .subtitle { font-size: 13px; color: #94a3b8; }
+  .header .holiday-badge {
+    display: inline-block;
+    background: #f97316;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .card h2 { font-size: 15px; font-weight: 700; margin-bottom: 12px; color: #1e293b; }
+
+  .indicator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .indicator {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 12px;
+    border-left: 4px solid #6b7280;
+  }
+  .indicator.up { border-left-color: #ef4444; }
+  .indicator.down { border-left-color: #22c55e; }
+  .indicator.warn { border-left-color: #f97316; }
+  .indicator.neutral { border-left-color: #6b7280; }
+  .indicator .label { font-size: 11px; color: #6b7280; margin-bottom: 2px; }
+  .indicator .value { font-size: 20px; font-weight: 800; }
+  .indicator .change { font-size: 12px; margin-top: 2px; }
+  .indicator .signal { font-size: 11px; color: #6b7280; margin-top: 4px; line-height: 1.4; }
+  .up .value, .up .change { color: #ef4444; }
+  .down .value, .down .change { color: #22c55e; }
+  .warn .value, .warn .change { color: #f97316; }
+
+  .news-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-item .news-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .news-item .news-body { font-size: 13px; color: #4b5563; line-height: 1.6; }
+
+  .risk-alert {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    border: 1px solid #fcd34d;
+  }
+  .risk-alert h3 { font-size: 13px; color: #92400e; margin-bottom: 6px; }
+  .risk-alert .risk-item { font-size: 12px; color: #78350f; margin-bottom: 4px; line-height: 1.5; }
+  .risk-alert .risk-date { font-weight: 700; }
+
+  .gauge-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 12px 0;
+  }
+  .gauge-bar .green { flex: 2; background: #22c55e; }
+  .gauge-bar .gray { flex: 5; background: #d1d5db; }
+  .gauge-bar .red { flex: 3; background: #ef4444; }
+  .gauge-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #6b7280;
+  }
+  .gauge-verdict {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+
+  .conclusion-card {
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .conclusion-card.stop {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border: 2px solid #fecaca;
+  }
+  .conclusion-card .big-icon { font-size: 40px; margin-bottom: 8px; }
+  .conclusion-card .verdict { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+  .conclusion-card .verdict.stop-text { color: #ef4444; }
+  .conclusion-card .sub-verdict { font-size: 13px; color: #6b7280; margin-bottom: 14px; }
+
+  .reason-list { text-align: left; }
+  .reason-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #fee2e2;
+    font-size: 13px;
+    color: #4b5563;
+  }
+  .reason-item:last-child { border-bottom: none; }
+  .reason-badge {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 1px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+  .badge-premium { background: #fef3c7; color: #92400e; }
+  .badge-event { background: #e0e7ff; color: #3730a3; }
+  .badge-policy { background: #fce7f3; color: #9d174d; }
+
+  .footer-note {
+    font-size: 11px;
+    color: #9ca3af;
+    text-align: center;
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>纳指100动态简报</h1>
+    <div class="subtitle">数据日期：2026年5月22日（周五）收盘</div>
+    <div class="holiday-badge">5月25日 阵亡将士纪念日 · 美股休市</div>
+  </div>
+
+  <!-- 指标卡片 -->
+  <div class="card">
+    <h2>核心指标一览</h2>
+    <div class="indicator-grid">
+      <div class="indicator up">
+        <div class="label">纳指100 NDX</div>
+        <div class="value">29,481.64</div>
+        <div class="change">+0.42% (+124点)</div>
+        <div class="signal">稳步收涨，盘中波动温和</div>
+      </div>
+      <div class="indicator up">
+        <div class="label">纳指100期货 NQ</div>
+        <div class="value">+1.0%</div>
+        <div class="change">亚洲早盘走高</div>
+        <div class="signal">盘前情绪积极，预示周二开盘向好</div>
+      </div>
+      <div class="indicator neutral">
+        <div class="label">恐慌指数 VIX</div>
+        <div class="value">16.70</div>
+        <div class="change">-0.36%（前收16.76）</div>
+        <div class="signal">低位微降，市场恐慌情绪极低</div>
+      </div>
+      <div class="indicator neutral">
+        <div class="label">VIX期货 VX</div>
+        <div class="value">19.46</div>
+        <div class="change">+0.59%</div>
+        <div class="signal">略高于现货，远期波动预期温和</div>
+      </div>
+      <div class="indicator warn" style="grid-column: 1 / -1;">
+        <div class="label">纳指ETF嘉实 159501</div>
+        <div class="value">1.978元</div>
+        <div class="change">溢价 5.19%（IOPV 1.8804）</div>
+        <div class="signal">⚠️ 极端高溢价！基金公司已发风险警示，威胁盘中临时停牌</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 关键事件 -->
+  <div class="card">
+    <h2>关键事件 · 大白话解读</h2>
+    <div class="news-item">
+      <div class="news-title">沃什宣誓就任美联储主席，鹰派信号明显</div>
+      <div class="news-body">5月22日，凯文·沃什正式接替鲍威尔。他明确表示美联储短期内不应释放降息信号，理事沃勒甚至说"不排除未来加息"。翻译一下：利率在高位待的时间可能比想象的长，科技股估值承压。</div>
+    </div>
+    <div class="news-item">
+      <div class="news-title">芯片股爆发，费城半导体指数创历史新高</div>
+      <div class="news-body">高通涨超11%，AMD涨近4%，费城半导体指数涨近2%再破纪录。AI和芯片需求持续强劲，带动纳指下方有支撑。但科技七巨头内部出现分化，英伟达、谷歌跌超1%，苹果、特斯拉涨超1%。</div>
+    </div>
+  </div>
+
+  <!-- 未来风险事件 -->
+  <div class="risk-alert">
+    <h3>⚠️ 未来风险事件预警</h3>
+    <div class="risk-item"><span class="risk-date">5月28日（周三）</span> — 美国4月PCE物价指数公布。这是美联储最看重的通胀指标，数据高低将直接影响加息预期，可能引发短期剧烈波动。</div>
+    <div class="risk-item"><span class="risk-date">6月17日（周三）</span> — 美联储6月议息会议 + 点阵图 + 经济预测。新主席沃什任内首次正式决策，点阵图将揭示全年利率路径，是上半年最重要的政策事件。</div>
+  </div>
+
+  <!-- 趋势仪表 -->
+  <div class="card">
+    <h2>短期趋势仪表</h2>
+    <div class="gauge-bar">
+      <div class="green"></div>
+      <div class="gray"></div>
+      <div class="red"></div>
+    </div>
+    <div class="gauge-label">
+      <span>偏悲观</span>
+      <span>震荡</span>
+      <span>偏乐观</span>
+    </div>
+    <div class="gauge-verdict" style="color:#6b7280;">
+      整体倾向：偏谨慎震荡<br>
+      <span style="font-size:12px;font-weight:400;">NQ期货走强 + VIX低位 = 短期情绪不差；但PCE即将公布 + ETF极端溢价 = 不宜激进</span>
+    </div>
+  </div>
+
+  <!-- 操作结论 -->
+  <div class="conclusion-card stop">
+    <div class="big-icon">⛔</div>
+    <div class="verdict stop-text">不加仓</div>
+    <div class="sub-verdict">建议等待溢价回落 + PCE数据落地后再评估</div>
+
+    <div class="reason-list">
+      <div class="reason-item">
+        <span class="reason-badge badge-premium">极端溢价</span>
+        <span>159501溢价高达5.19%，远超2%警戒线。基金公司已发风险警示并威胁停牌，此时买入等于在高位接盘，溢价回归正常时将承受额外亏损。</span>
+      </div>
+      <div class="reason-item">
+        <span class="reason-badge badge-event">PCE在即</span>
+        <span>5月28日（本周三）公布4月PCE通胀数据。若数据超预期，可能强化沃什的鹰派立场，纳指面临回调压力。等数据落地再行动更稳妥。</span>
+      </div>
+      <div class="reason-item">
+        <span class="reason-badge badge-policy">鹰派转向</span>
+        <span>新主席沃什上任即释放不放水信号，理事沃勒明确不排除加息。利率环境对高估值科技股不友好，纳指上行空间受限。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    以上分析基于2026年5月22日收盘数据及5月25日亚洲早盘期货报价。<br>
+    投资有风险，决策须谨慎。本简报仅供参考，不构成投资建议。
+  </div>
+
+</div>
+</body>
+</html>
