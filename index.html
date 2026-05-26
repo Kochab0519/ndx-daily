@@ -3,169 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>纳指100动态简报 · 2026-05-25</title>
+<title>纳指100动态简报 · 2026-05-26</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f3f4f6;color:#1f2937;line-height:1.6;padding:16px}
-.container{max-width:480px;margin:0 auto}
-.header{background:#fff;border-radius:16px;padding:20px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.header h1{font-size:20px;font-weight:700;margin-bottom:4px}
-.header .sub{font-size:13px;color:#6b7280}
-.holiday-badge{display:inline-block;background:#fef3c7;color:#92400e;font-size:12px;padding:3px 10px;border-radius:20px;margin-top:8px;font-weight:600}
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-.card{background:#fff;border-radius:14px;padding:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.card .label{font-size:11px;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
-.card .value{font-size:24px;font-weight:700;margin-bottom:2px}
-.card .change{font-size:13px;font-weight:600}
-.card .signal{font-size:11px;margin-top:6px;padding:3px 8px;border-radius:10px;display:inline-block;font-weight:600}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f3f4f6;color:#1f2937;line-height:1.6;padding:16px;max-width:480px;margin:0 auto}
+.header{text-align:center;padding:20px 0 16px}
+.header h1{font-size:20px;font-weight:700;color:#111827}
+.header .sub{font-size:13px;color:#6b7280;margin-top:4px}
+.header .holiday-badge{display:inline-block;background:#f97316;color:#fff;font-size:12px;padding:2px 10px;border-radius:12px;margin-top:6px}
+.card{background:#fff;border-radius:14px;padding:16px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.card-title{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.tag{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600}
+.tag-up{background:#fef2f2;color:#ef4444}
+.tag-down{background:#f0fdf4;color:#22c55e}
+.tag-neutral{background:#f3f4f6;color:#6b7280}
+.tag-warn{background:#fff7ed;color:#f97316}
+.tag-wait{background:#eff6ff;color:#3b82f6}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px}
+.metric-item{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #f3f4f6}
+.metric-item .label{color:#6b7280}
+.metric-item .value{font-weight:600}
+.price-big{font-size:28px;font-weight:800;margin:4px 0}
+.change{font-size:15px;font-weight:600}
 .up{color:#ef4444}
 .down{color:#22c55e}
-.neutral{color:#6b7280}
-.warn{color:#f97316}
-.signal-up{background:#fef2f2;color:#ef4444}
-.signal-down{background:#f0fdf4;color:#22c55e}
-.signal-warn{background:#fff7ed;color:#f97316}
-.signal-neutral{background:#f9fafb;color:#6b7280}
-.full-card{background:#fff;border-radius:14px;padding:16px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.full-card h2{font-size:16px;font-weight:700;margin-bottom:10px}
-.full-card p,.full-card li{font-size:14px;color:#4b5563;margin-bottom:6px}
-.full-card ul{padding-left:18px}
-.risk-bar{background:#fff7ed;border-left:4px solid #f97316;border-radius:0 12px 12px 0;padding:12px 16px;margin-bottom:12px;font-size:14px}
-.risk-bar strong{color:#f97316}
-.gauge-section{background:#fff;border-radius:14px;padding:16px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.gauge-label{font-size:12px;color:#9ca3af;margin-bottom:8px;text-align:center}
-.gauge-bar{height:10px;border-radius:5px;background:linear-gradient(to right,#22c55e 0%,#22c55e 25%,#f59e0b 50%,#ef4444 75%,#ef4444 100%);position:relative;margin-bottom:12px}
-.gauge-dot{position:absolute;top:-4px;transform:translateX(-50%);width:18px;height:18px;background:#fff;border:3px solid #1f2937;border-radius:50%}
-.gauge-labels{display:flex;justify-content:space-between;font-size:11px;color:#9ca3af}
-.conclusion{background:#eff6ff;border:2px solid #3b82f6;border-radius:16px;padding:20px;margin-bottom:12px}
-.conclusion .verdict{font-size:28px;font-weight:800;color:#3b82f6;text-align:center;margin-bottom:8px}
-.conclusion .reasons{margin-top:12px}
-.conclusion .reason{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-size:13px;color:#4b5563}
-.conclusion .reason .tag{flex-shrink:0;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px}
-.tag-cost{background:#fef2f2;color:#ef4444}
-.tag-market{background:#f0fdf4;color:#22c55e}
-.tag-risk{background:#fff7ed;color:#f97316}
-.tag-info{background:#eff6ff;color:#3b82f6}
-.footer{text-align:center;font-size:11px;color:#d1d5db;padding:16px 0}
-.footer a{color:#9ca3af;text-decoration:none}
+.news-item{padding:8px 0;border-bottom:1px solid #f3f4f6;font-size:13px}
+.news-item:last-child{border-bottom:none}
+.news-item .source{color:#9ca3af;font-size:11px}
+.alert-bar{background:#fff7ed;border-left:4px solid #f97316;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:12px}
+.alert-bar.blue{background:#eff6ff;border-left-color:#3b82f6}
+.gauge-section{text-align:center;padding:12px 0}
+.gauge-label{font-size:13px;color:#6b7280;margin-bottom:6px}
+.gauge-bar{height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin:8px 0}
+.gauge-fill{height:100%;border-radius:4px;transition:width .3s}
+.gauge-fill.bullish{background:linear-gradient(90deg,#22c55e,#ef4444)}
+.gauge-fill.bearish{background:linear-gradient(90deg,#ef4444,#22c55e)}
+.conclusion-card{border-radius:14px;padding:20px;text-align:center;margin-bottom:12px}
+.conclusion-card.wait{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #3b82f6}
+.conclusion-card.buy{background:linear-gradient(135deg,#fef2f2,#fecaca);border:2px solid #ef4444}
+.conclusion-card.avoid{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #22c55e}
+.conclusion-icon{font-size:40px;margin-bottom:8px}
+.conclusion-title{font-size:20px;font-weight:800;margin-bottom:6px}
+.conclusion-card.wait .conclusion-title{color:#3b82f6}
+.conclusion-card.buy .conclusion-title{color:#ef4444}
+.conclusion-card.avoid .conclusion-title{color:#22c55e}
+.conclusion-reasons{text-align:left;font-size:13px;margin-top:10px;padding:0 8px}
+.conclusion-reasons li{margin:6px 0;padding-left:4px}
+.footer{text-align:center;font-size:11px;color:#9ca3af;padding:16px 0 24px}
+.footer a{color:#9ca3af;text-decoration:underline}
+.signal-row{display:flex;align-items:center;gap:6px;font-size:13px;margin-top:6px}
 </style>
 </head>
 <body>
-<div class="container">
 
 <div class="header">
-  <h1>纳指100动态简报</h1>
-  <div class="sub">2026年5月25日 星期一 · 数据截至5月22日收盘</div>
-  <div class="holiday-badge">今日美股休市 · 阵亡将士纪念日</div>
+<h1>纳指100动态简报</h1>
+<div class="sub">2026年5月26日 星期二</div>
+<div class="holiday-badge">5/25 阵亡将士纪念日休市 · 数据截至5/22收盘</div>
 </div>
 
-<div class="cards">
-  <div class="card">
-    <div class="label">纳斯达克100 (NDX)</div>
-    <div class="value up">29,481.64</div>
-    <div class="change up">+124.37 (+0.42%)</div>
-    <div class="signal signal-up">温和收涨</div>
-  </div>
-  <div class="card">
-    <div class="label">纳指期货 (NQ 2606)</div>
-    <div class="value up">29,974.00</div>
-    <div class="change up">+415.25 (+1.40%)</div>
-    <div class="signal signal-up">假日盘前偏强</div>
-  </div>
-  <div class="card">
-    <div class="label">恐慌指数 (VIX)</div>
-    <div class="value down">16.70</div>
-    <div class="change down">-0.06 (-0.36%)</div>
-    <div class="signal signal-down">低恐慌区间</div>
-  </div>
-  <div class="card">
-    <div class="label">VIX期货 (VX 2606)</div>
-    <div class="value down">19.10</div>
-    <div class="change down">-0.43 (-2.22%)</div>
-    <div class="signal signal-down">波动预期下行</div>
-  </div>
+<!-- NDX卡片 -->
+<div class="card">
+<div class="card-title">📈 纳指100 (NDX) <span class="tag tag-up">+0.42%</span></div>
+<div class="price-big">29,481.64</div>
+<div class="change up">+124.37</div>
+<div class="metrics">
+<div class="metric-item"><span class="label">昨收</span><span class="value">29,357.27</span></div>
+<div class="metric-item"><span class="label">今开</span><span class="value">29,476.29</span></div>
+<div class="metric-item"><span class="label">最高</span><span class="value">29,663.89</span></div>
+<div class="metric-item"><span class="label">最低</span><span class="value">29,423.63</span></div>
+<div class="metric-item"><span class="label">52周高</span><span class="value">29,678.89</span></div>
+<div class="metric-item"><span class="label">成交量</span><span class="value">11.12亿股</span></div>
+</div>
+<div class="signal-row" style="margin-top:8px;color:#6b7280">📊 距52周高点仅0.66%，高位窄幅震荡</div>
 </div>
 
-<div class="card" style="margin-bottom:12px">
-  <div class="label">纳指ETF嘉实 (159501)</div>
-  <div class="value up">¥2.040</div>
-  <div class="change up">+0.062 (+3.13%)</div>
-  <div style="font-size:12px;color:#6b7280;margin-top:4px">净值 ¥1.881（5月21日） · 成交额 2.01亿</div>
-  <div class="signal signal-warn" style="margin-top:8px">溢价率 7.99% · 极端高溢价</div>
+<!-- NQ期货卡片 -->
+<div class="card">
+<div class="card-title">📈 纳指100期货 (NQ) <span class="tag tag-up">+0.87%</span></div>
+<div class="price-big">29,814.75</div>
+<div class="change up">+256.00</div>
+<div class="signal-row" style="color:#6b7280">⏱ 延时行情 · 5/26 盘前交易中</div>
+<div class="signal-row" style="margin-top:4px;color:#ef4444">🔥 期货较现货升水333点，盘前情绪偏乐观</div>
 </div>
 
-<div class="risk-bar">
-  <strong>⚠ 溢价警示：</strong>159501溢价率7.99%，远超5%警戒线。当前买入意味着比基金真实净值多付约8%的成本。历史上5%以上溢价常伴随基金公司风险提示甚至停牌预警。
+<!-- VIX卡片 -->
+<div class="card">
+<div class="card-title">📈 恐慌指数 (VIX) <span class="tag tag-up">+1.02%</span></div>
+<div class="price-big">16.76</div>
+<div class="change up">+0.17</div>
+<div class="metrics">
+<div class="metric-item"><span class="label">昨收</span><span class="value">16.59</span></div>
+<div class="metric-item"><span class="label">今开</span><span class="value">16.92</span></div>
+<div class="metric-item"><span class="label">最高</span><span class="value">16.94</span></div>
+<div class="metric-item"><span class="label">最低</span><span class="value">16.75</span></div>
+</div>
+<div class="signal-row" style="color:#22c55e">✅ VIX处于16-17低位区间，市场恐慌情绪不高</div>
 </div>
 
-<div class="full-card">
-  <h2>📰 关键驱动事件</h2>
-  <ul>
-    <li><strong>美伊谈判突破：</strong>双方已就霍尔木兹海峡全面开放达成一致。这意味着原油运输恢复正常，油价下行，全球风险偏好上升，利好科技成长股。</li>
-    <li><strong>英伟达转战CPU赛道：</strong>AI GPU在华遇冷后，黄仁勋押注2000亿美元CPU市场。短期情绪偏中性，但英伟达业务多元化的叙事对纳指有一定支撑。</li>
-  </ul>
+<!-- VX期货卡片 -->
+<div class="card">
+<div class="card-title">📈 VIX期货 (VX) <span class="tag tag-down">-2.73%</span></div>
+<div class="price-big">19.00</div>
+<div class="change down">-0.53</div>
+<div class="signal-row" style="color:#6b7280">⏱ 延时行情 · 5/26 盘前交易中</div>
+<div class="signal-row" style="margin-top:4px;color:#f97316">⚠ VIX微涨 + VX期货下跌 = 市场对远期波动预期分歧，短期平静但中期存忧</div>
 </div>
 
-<div class="full-card">
-  <h2>📅 未来风险预警</h2>
-  <ul>
-    <li style="color:#f97316"><strong>⚠ 5月29日前后：</strong>美国4月PCE通胀数据公布。这是美联储最关注的通胀指标，若超预期上行可能打压降息预期，对纳指构成短期压力。</li>
-    <li><strong>6月5日前后：</strong>美国5月非农就业报告。劳动力市场数据将影响6月FOMC会议的政策基调。</li>
-  </ul>
+<!-- 159501卡片 -->
+<div class="card">
+<div class="card-title">📈 纳指ETF嘉实 (159501) <span class="tag tag-down">-0.97%</span></div>
+<div class="price-big">¥2.033</div>
+<div class="change down">-0.020</div>
+<div class="metrics">
+<div class="metric-item"><span class="label">昨收</span><span class="value">¥2.053</span></div>
+<div class="metric-item"><span class="label">今开</span><span class="value">¥2.053</span></div>
+<div class="metric-item"><span class="label">最高</span><span class="value">¥2.053</span></div>
+<div class="metric-item"><span class="label">最低</span><span class="value">¥2.026</span></div>
+<div class="metric-item"><span class="label">成交额</span><span class="value">1.76亿</span></div>
+<div class="metric-item"><span class="label">单位净值</span><span class="value">¥1.889</span></div>
+<div class="metric-item"><span class="label">净值日期</span><span class="value">2026-05-22</span></div>
+</div>
+<div class="alert-bar" style="margin-top:10px">
+<strong>⚠ 溢价率 7.68%（极端高溢价）</strong><br>
+当前市价较净值溢价超7.6%，远超5%警戒线。此时买入意味着你比实际资产多付了近8%的成本，风险收益比极差。
+</div>
 </div>
 
+<!-- 新闻解读 -->
+<div class="card">
+<div class="card-title">📰 驱动事件</div>
+<div class="news-item">
+<strong>美伊协议谈判进入关键阶段</strong><br>
+美国务卿称磋商"还需几天"，伊朗媒体否认已达成谅解备忘录。中东局势缓和预期是近期美股上涨的重要推手，但谈判仍有变数。<br>
+<span class="source">财联社 · 5/26</span>
+</div>
+<div class="news-item">
+<strong>超级IPO潮引发"抽血"担忧</strong><br>
+多家科技巨头排队上市，市场担心大量IPO会分流存量资金，对现有科技股估值形成压力。<br>
+<span class="source">华尔街见闻 · 5/25</span>
+</div>
+<div class="news-item">
+<strong>美联储进入"沃什时代"</strong><br>
+新主席沃什5月22日宣誓就任，立场偏鹰。上次会议纪要显示多位官员要求删除"宽松偏向"，加息风险自2023年以来首次被纳入考量。<br>
+<span class="source">证券时报 · 5/23</span>
+</div>
+</div>
+
+<!-- 未来风险预警 -->
+<div class="alert-bar">
+<strong>📅 未来风险预警</strong><br><br>
+<strong>⚠ 美伊谈判结果（本周内）</strong> — 若达成协议则利好出尽，若破裂则油价飙升冲击市场。不确定性极高，建议等待落地。<br><br>
+<strong>美联储6月会议（6/16-17）</strong> — 维持利率概率97.3%，但鹰派纪要可能提前发酵。<br><br>
+<strong>超级IPO潮</strong> — 多家巨头IPO可能在未来1-2周内定价，关注资金面变化。
+</div>
+
+<!-- 趋势仪表盘 -->
+<div class="card">
+<div class="card-title">🧭 趋势仪表盘</div>
 <div class="gauge-section">
-  <div class="gauge-label">市场情绪仪表盘</div>
-  <div class="gauge-bar">
-    <div class="gauge-dot" style="left:22%"></div>
-  </div>
-  <div class="gauge-labels">
-    <span style="color:#22c55e">极度恐慌</span>
-    <span>恐慌</span>
-    <span>中性</span>
-    <span>贪婪</span>
-    <span style="color:#ef4444">极度贪婪</span>
-  </div>
-  <div style="text-align:center;margin-top:10px;font-size:14px;color:#4b5563">
-    综合判断：<strong style="color:#6b7280">偏谨慎乐观</strong> — VIX低位 + NQ期货偏强，但假日薄量交易可信度打折，且159501极端溢价压缩操作空间。
-  </div>
+<div class="gauge-label">综合倾向：<strong style="color:#f97316">偏谨慎</strong></div>
+<div class="gauge-bar"><div class="gauge-fill bullish" style="width:45%"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:11px;color:#9ca3af">
+<span>← 偏空</span><span>中性</span><span>偏多 →</span>
+</div>
+</div>
+<div style="font-size:13px;color:#6b7280;margin-top:8px">
+期货盘前偏乐观（NQ +0.87%），但VIX/VX背离暗示中期分歧，叠加美伊谈判不确定性、159501极端溢价，短期不宜激进。
+</div>
 </div>
 
-<div class="conclusion">
-  <div class="verdict">⏸️ 观望</div>
-  <div style="text-align:center;font-size:13px;color:#3b82f6;margin-bottom:12px">建议等待溢价回落至合理区间再做决策</div>
-  <div class="reasons">
-    <div class="reason">
-      <span class="tag tag-cost">溢价风险</span>
-      <span>159501溢价率7.99%处于极端高位，买入成本严重虚高。净值仅1.881，市价2.040，每份多付近8%的"泡沫成本"。</span>
-    </div>
-    <div class="reason">
-      <span class="tag tag-market">假日失真</span>
-      <span>今日美股因阵亡将士纪念日休市，NQ期货+1.40%的涨幅来自假日薄量交易，参考价值有限，需等周二正式开盘验证方向。</span>
-    </div>
-    <div class="reason">
-      <span class="tag tag-risk">事件窗口</span>
-      <span>本周内PCE通胀数据即将公布（预计5月29日前后），这是影响美联储政策路径的关键变量，建议等数据落地后再做决策。</span>
-    </div>
-    <div class="reason">
-      <span class="tag tag-info">积极信号</span>
-      <span>NDX上周五温和收涨+0.42%，VIX维持16.70低位，恐慌情绪消退中。若溢价回落至3%以下且周二开盘确认涨势，可重新评估加仓。</span>
-    </div>
-  </div>
+<!-- 操作结论 -->
+<div class="conclusion-card wait">
+<div class="conclusion-icon">⏸️</div>
+<div class="conclusion-title">观望</div>
+<div style="font-size:13px;color:#3b82f6">建议等待，暂不加仓</div>
+<ul class="conclusion-reasons">
+<li><strong>溢价畸高：</strong>159501溢价率7.68%，远超5%警戒线，此时买入成本畸高，安全边际极差。</li>
+<li><strong>事件不确定性：</strong>美伊谈判结果本周可能落地，无论成败都将引发市场剧烈反应，建议等尘埃落定后再决策。</li>
+<li><strong>VIX/VX背离：</strong>现货VIX微涨但期货VX下跌，市场对中期波动预期存在分歧，信号不够清晰。</li>
+</ul>
 </div>
 
 <div class="footer">
-  <p>数据来源：</p>
-  <p>
-    <a href="https://www.futunn.com/index/.NDX-US">NDX · 富途</a> ·
-    <a href="https://www.futunn.com/futures/NQMAIN-US">NQ · 富途</a> ·
-    <a href="https://www.futunn.com/index/.VIX-US">VIX · 富途</a> ·
-    <a href="https://www.futunn.com/futures/VXMAIN-US">VX · 富途</a> ·
-    <a href="https://xueqiu.com/S/SZ159501">159501 · 雪球</a>
-  </p>
-  <p style="margin-top:6px">自动生成于 2026-05-25 · 仅供参考，不构成投资建议</p>
+数据来源：<br>
+<a href="https://www.futunn.com/index/.NDX-US">富途牛牛 - 纳指100</a> · 
+<a href="https://www.futunn.com/futures/NQMAIN-US">富途牛牛 - NQ期货</a> · 
+<a href="https://www.futunn.com/index/.VIX-US">富途牛牛 - VIX</a> · 
+<a href="https://www.futunn.com/futures/VXMAIN-US">富途牛牛 - VX期货</a> · 
+<a href="https://xueqiu.com/S/SZ159501">雪球 - 159501</a><br><br>
+免责声明：本内容仅供参考，不构成投资建议。投资有风险，入市需谨慎。
 </div>
 
-</div>
 </body>
 </html>
